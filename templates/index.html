@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Air Quality Prediction</title>
+  
+  <link rel="stylesheet" href="static/css/styles.css">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+  <!-- symbol  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/386098c742.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/386098c742.css" crossorigin="anonymous">
+  <!-- goggle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section id="title">
+    <div class="container-fluid3">
+      <nav class="navbar navbar-expand-lg navbar-dark"  style="padding :0 250px 4.5rem";>
+        <a class="navbar-brand" href="" style="font-size:3.5rem;">Air Quality Prediction</a> 
+      </nav>
+      <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="head">Predicting air quality is not just about forecasting numbers; it's about envisioning a healthier future for our planet, where clean and breathable air is a fundamental right for all.</h1>
+          
+        </div>
+        <div class="col-lg-6">
+          <img class = "earth-img"src="static/images/56.png" alt="iphone-mockup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row">
+        <h1 class="headong">Major Causes Of Pollution</h1>
+      <div class="col-lg-4">
+        
+        <i class="fa-solid fa-industry fa-5x iconi"></i>
+        <h3 class="headthree">Industrial Emissions</h3>
+        <p>Industrial activities, including manufacturing processes, power generation, and chemical production, release a significant amount of pollutants into the air, water, and soil. </p>
+      </div>
+      <div class="col-lg-4">
+        
+        <i class="fa-solid fa-car-burst fa-5x iconi"></i>
+        <h3 class="headthree">Vehicle Emissions</h3>
+        <p>The combustion of fossil fuels in vehicles, including cars, trucks, and motorcycles, is a major source of air pollution. Exhaust emissions contain pollutants such as carbon dioxide, nitrogen oxides, particulate matter, and volatile organic compounds. </p>
+      </div>
+      <div class="col-lg-4">
+        <i class="fa-solid fa-tree fa-5x iconi"></i>
+        <h3 class="headthree">Deforestation</h3>
+        <p>Trees play a vital role in absorbing carbon dioxide and releasing oxygen, so deforestation increases atmospheric carbon dioxide levels.</p>
+      </div>
+    </div>
+  </section>
+  <section id="pricing">
+    <h2 class="p">Calculation Of Air Quality Index (AQI)</h2>
+    <p class="p"> To calculate the Air Quality Index (AQI), you need to provide the values of the following parameters:</p>
+    
+    <div class="row">
+      
+      <div class="pricing-colum col-lg-6">
+        <form id="aqiForm" method="POST" action="/">
+            <div class="form-group">
+              <label for="formGroupExampleInput">Ammonia (NH3):</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="concentration in micrograms per cubic meter (µg/m³)" name="nh3" required>
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Particulate Matter (PM2.5):</label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="concentration in micrograms per cubic meter (µg/m³)" name="pm2_5" required>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2"> Particulate Matter (PM10):</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="concentration in micrograms per cubic meter (µg/m³)" name="pm10" required>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Sulphur Dioxide (SO2):</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="concentration in parts per billion (ppb)" name="so2" required>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2"> Nitrogen Dioxide (NOx):</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="concentration in parts per billion (ppb)." name="no2" required>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Carbon Monoxide (CO):</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="concentration in parts per million (ppm)" name="co" required>
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Ozone (O3):</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=" concentration in parts per billion (ppb)" name="o3" required>
+              </div>
+              <button type="submit" class="btn btn-light btn-lg download-btn" value="Predict AQI"><i class="fa-solid fa-gears"></i></i>Prediction</button>
+
+            </form>
+      </div>
+      <div class="col-lg-6">
+        <div id="resultbh">
+          <p class="pk"> According to the given values AQI is :</p>
+          <p id="result" style="color: black; text-align: center;"> </p>
+          <p id="aqiCategory" style="color: black; text-align: center;"> </p>
+          <div id ="aqiCategoryy">
+            <img id="aqiImage" src="static/images/category.png" alt="AQI Category Image">
+          </div>
+        </div>
+      </div>
+
+  </section>
+  <!-- Footer -->
+  <script src="static/js/script.js"></script>
+  <footer id="footer">
+    
+    <p class="footer-head">© Copyright</p>
+
+  </footer>
+
+
+</body>
+
+</html>
